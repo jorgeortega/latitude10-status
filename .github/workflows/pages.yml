@@ -1,4 +1,5 @@
-# The page: static files from main, on GitHub Pages at status.latitude10.tech.
+# The page on its own, when someone pushes (incidents, the page itself).
+# The hourly data is published by probe.yml.
 name: pages
 on:
   push:

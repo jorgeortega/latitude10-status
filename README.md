@@ -13,8 +13,9 @@ Cloudflare, where latitude10.tech runs, so it stays up when the site doesn't.
   `summary.json` for the page. A window with no probe counts neither way.
 - `incidents/*.md`: written by hand. First line `# Title`, then
   `Date: YYYY-MM-DD`, then the account.
-- `.github/workflows/probe.yml`: every hour, probes for 55 minutes and commits
-  once. `.github/workflows/pages.yml`: publishes the page.
+- `.github/workflows/probe.yml`: every hour, probes for 55 minutes, commits
+  once, and publishes the page. `.github/workflows/pages.yml` publishes it
+  after a push of your own (an incident).
 
 The SLA these numbers serve: https://latitude10.tech/legal/sla (Enterprise
 agreements only).

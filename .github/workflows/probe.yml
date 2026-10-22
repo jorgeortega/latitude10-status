@@ -1,12 +1,20 @@
-# Every hour, probe every 5 minutes for 55 minutes, then commit the hour's
-# windows and the summary once. Public repository: Actions minutes are free.
+# Every hour, probe every 5 minutes for 55 minutes, commit the hour's windows
+# and the summary once, then publish the page. Pushes made with the workflow's
+# own token don't start other workflows, so Pages is deployed here too.
+# Public repository: Actions minutes are free.
 name: probe
 on:
   schedule:
     - cron: '0 * * * *'
-  workflow_dispatch: {}
+  workflow_dispatch:
+    inputs:
+      minutes:
+        description: 'How long to probe (minutes)'
+        default: '55'
 permissions:
   contents: write
+  pages: write
+  id-token: write
 concurrency:
   group: probe
   cancel-in-progress: false
@@ -20,7 +28,7 @@ jobs:
         with:
           node-version: 22
       - run: node --test test/
-      - run: node scripts/probe.mjs --for 55
+      - run: node scripts/probe.mjs --for "${{ inputs.minutes || '55' }}"
       - run: node scripts/summary.mjs
       - name: Commit the hour
         run: |
@@ -30,3 +38,17 @@ jobs:
           git diff --cached --quiet || git commit -m "data: probes $(date -u +%Y-%m-%dT%H:00Z)"
           git pull --rebase
           git push
+  pages:
+    needs: probe
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: main
+      - uses: actions/configure-pages@v5
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: .
+      - uses: actions/deploy-pages@v4
