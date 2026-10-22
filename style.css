@@ -1,0 +1,19 @@
+/* Light and dark, like latitude10.tech's Terminal tokens, kept small. */
+:root { --bg: #fbfaf7; --fg: #1d1c1a; --muted: #5e5a52; --border: #d9d4ca; --up: #1f6f43; --down: #a1261b; color-scheme: light dark; }
+@media (prefers-color-scheme: dark) { :root { --bg: #151413; --fg: #ece8e1; --muted: #a9a398; --border: #3a3733; --up: #6fcf97; --down: #ff8a7a; } }
+* { box-sizing: border-box; }
+body { margin: 0; background: var(--bg); color: var(--fg); font: 16px/1.5 ui-monospace, SFMono-Regular, Menlo, monospace; }
+header { padding: 12px 16px; border-bottom: 1px solid var(--border); }
+header span { color: var(--muted); margin-left: 8px; }
+main { max-width: 860px; margin: 0 auto; padding: 16px; }
+ul { padding-left: 0; list-style: none; }
+li { padding: 6px 0; border-bottom: 1px solid var(--border); display: flex; justify-content: space-between; gap: 12px; }
+.up { color: var(--up); } .down { color: var(--down); }
+.scroller { overflow-x: auto; border: 1px solid var(--border); border-radius: 6px; }
+table { border-collapse: collapse; width: 100%; min-width: 520px; font-size: 14px; }
+caption { text-align: left; padding: 8px 12px; color: var(--muted); }
+th, td { padding: 6px 12px; border-top: 1px solid var(--border); text-align: left; }
+article { border-top: 1px solid var(--border); padding: 8px 0; }
+pre { white-space: pre-wrap; font: inherit; color: var(--muted); }
+.small { color: var(--muted); font-size: 14px; }
+a { color: inherit; }

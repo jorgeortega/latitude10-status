@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'self'; style-src 'self'; connect-src 'self'; img-src 'self'; base-uri 'none'; form-action 'none'">
+<title>Latitude 10 status</title>
+<link rel="stylesheet" href="style.css">
+<script type="module" src="app.js"></script>
+</head>
+<body>
+<header><strong>Latitude 10</strong> <span>Status</span></header>
+<main>
+  <h1>Service status</h1>
+  <p id="updated" role="status">Loading…</p>
+  <section aria-labelledby="now-title">
+    <h2 id="now-title">Now</h2>
+    <ul id="now"></ul>
+  </section>
+  <section aria-labelledby="months-title">
+    <h2 id="months-title">Monthly uptime</h2>
+    <div class="scroller" tabindex="0" role="region" aria-label="Monthly uptime">
+      <table id="months"><caption>Share of 5-minute windows up, per calendar month (UTC). Windows with no probe aren’t counted.</caption></table>
+    </div>
+  </section>
+  <section aria-labelledby="incidents-title">
+    <h2 id="incidents-title">Incidents</h2>
+    <div id="incidents"></div>
+  </section>
+  <p class="small">Probed every 5 minutes from GitHub Actions, outside Cloudflare. <a href="https://latitude10.tech/legal/sla">The SLA</a> · <a href="https://github.com/jorgeortega/latitude10-status">Source and data</a></p>
+</main>
+</body>
+</html>

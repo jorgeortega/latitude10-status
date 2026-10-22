@@ -1,0 +1,32 @@
+# Every hour, probe every 5 minutes for 55 minutes, then commit the hour's
+# windows and the summary once. Public repository: Actions minutes are free.
+name: probe
+on:
+  schedule:
+    - cron: '0 * * * *'
+  workflow_dispatch: {}
+permissions:
+  contents: write
+concurrency:
+  group: probe
+  cancel-in-progress: false
+jobs:
+  probe:
+    runs-on: ubuntu-latest
+    timeout-minutes: 59
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - run: node --test test/
+      - run: node scripts/probe.mjs --for 55
+      - run: node scripts/summary.mjs
+      - name: Commit the hour
+        run: |
+          git config user.name "latitude10-status"
+          git config user.email "status@latitude10.tech"
+          git add data summary.json
+          git diff --cached --quiet || git commit -m "data: probes $(date -u +%Y-%m-%dT%H:00Z)"
+          git pull --rebase
+          git push
