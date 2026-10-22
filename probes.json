@@ -5,7 +5,7 @@
     { "id": "site", "name": "Website", "url": "https://latitude10.tech/", "expect": [200] },
     { "id": "registry-api", "name": "Registry API", "url": "https://latitude10.tech/api/registry/v1/versions", "expect": [401] },
     { "id": "mcp", "name": "Hosted MCP endpoint", "url": "https://latitude10.tech/mcp/readiness", "method": "POST", "body": "{\"jsonrpc\":\"2.0\",\"id\":1,\"method\":\"ping\"}", "headers": { "content-type": "application/json", "accept": "application/json, text/event-stream" }, "expect": [200, 202, 400, 405] },
-    { "id": "reference", "name": "Hosted API reference", "url": "https://latitude10.tech/r/latitude10/status-canary", "expect": [200], "enabled": false },
-    { "id": "docs", "name": "Hosted docs", "url": "https://latitude10.tech/docs/latitude10/status-canary", "expect": [200], "enabled": false }
+    { "id": "reference", "name": "Hosted API reference", "url": "https://latitude10.tech/r/jorge-ortega/status-canary", "expect": [200] },
+    { "id": "docs", "name": "Hosted docs", "url": "https://latitude10.tech/docs/jorge-ortega/status-canary", "expect": [200] }
   ]
 }
