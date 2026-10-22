@@ -1,5 +1,5 @@
 {
-  "updated": "2026-10-22T10:36:36.967Z",
+  "updated": "2026-10-22T11:44:08.656Z",
   "services": [
     {
       "id": "site",
@@ -12,23 +12,41 @@
     {
       "id": "mcp",
       "name": "Hosted MCP endpoint"
+    },
+    {
+      "id": "reference",
+      "name": "Hosted API reference"
+    },
+    {
+      "id": "docs",
+      "name": "Hosted docs"
     }
   ],
   "current": {
     "site": {
       "up": true,
       "status": 200,
-      "ms": 1150
+      "ms": 1262
     },
     "registry-api": {
       "up": true,
       "status": 401,
-      "ms": 922
+      "ms": 757
     },
     "mcp": {
       "up": true,
       "status": 200,
-      "ms": 875
+      "ms": 872
+    },
+    "reference": {
+      "up": true,
+      "status": 200,
+      "ms": 2296
+    },
+    "docs": {
+      "up": true,
+      "status": 200,
+      "ms": 3152
     }
   },
   "months": [
@@ -36,14 +54,22 @@
       "month": "2026-10",
       "services": {
         "site": {
-          "windows": 1,
+          "windows": 2,
           "uptime": 100
         },
         "registry-api": {
-          "windows": 1,
+          "windows": 2,
           "uptime": 100
         },
         "mcp": {
+          "windows": 2,
+          "uptime": 100
+        },
+        "reference": {
+          "windows": 1,
+          "uptime": 100
+        },
+        "docs": {
           "windows": 1,
           "uptime": 100
         }
