@@ -21,7 +21,7 @@ The SLA these numbers serve: https://latitude10.tech/legal/sla (Enterprise
 agreements only).
 
 ```bash
-node --test test/
+node --test test/*.test.mjs
 node scripts/probe.mjs
 node scripts/summary.mjs
 ```
