@@ -1,1 +1,54 @@
-{"updated":null,"services":[],"current":{},"months":[],"incidents":[]}
+{
+  "updated": "2026-10-22T10:36:36.967Z",
+  "services": [
+    {
+      "id": "site",
+      "name": "Website"
+    },
+    {
+      "id": "registry-api",
+      "name": "Registry API"
+    },
+    {
+      "id": "mcp",
+      "name": "Hosted MCP endpoint"
+    }
+  ],
+  "current": {
+    "site": {
+      "up": true,
+      "status": 200,
+      "ms": 1150
+    },
+    "registry-api": {
+      "up": true,
+      "status": 401,
+      "ms": 922
+    },
+    "mcp": {
+      "up": true,
+      "status": 200,
+      "ms": 875
+    }
+  },
+  "months": [
+    {
+      "month": "2026-10",
+      "services": {
+        "site": {
+          "windows": 1,
+          "uptime": 100
+        },
+        "registry-api": {
+          "windows": 1,
+          "uptime": 100
+        },
+        "mcp": {
+          "windows": 1,
+          "uptime": 100
+        }
+      }
+    }
+  ],
+  "incidents": []
+}
