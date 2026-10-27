@@ -1,5 +1,5 @@
 {
-  "updated": "2026-10-27T17:14:05.051Z",
+  "updated": "2026-10-27T22:02:28.234Z",
   "services": [
     {
       "id": "site",
@@ -26,27 +26,27 @@
     "site": {
       "up": true,
       "status": 200,
-      "ms": 2375
+      "ms": 3109
     },
     "registry-api": {
       "up": true,
       "status": 401,
-      "ms": 1704
+      "ms": 1952
     },
     "mcp": {
       "up": true,
       "status": 200,
-      "ms": 2517
+      "ms": 2592
     },
     "reference": {
       "up": true,
       "status": 200,
-      "ms": 1946
+      "ms": 3157
     },
     "docs": {
       "up": true,
       "status": 200,
-      "ms": 2465
+      "ms": 4167
     }
   },
   "months": [
@@ -54,23 +54,23 @@
       "month": "2026-10",
       "services": {
         "site": {
-          "windows": 299,
-          "uptime": 98.996
+          "windows": 310,
+          "uptime": 99.032
         },
         "registry-api": {
-          "windows": 299,
+          "windows": 310,
           "uptime": 100
         },
         "mcp": {
-          "windows": 299,
+          "windows": 310,
           "uptime": 100
         },
         "reference": {
-          "windows": 298,
+          "windows": 309,
           "uptime": 100
         },
         "docs": {
-          "windows": 298,
+          "windows": 309,
           "uptime": 100
         }
       }
